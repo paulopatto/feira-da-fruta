@@ -1,0 +1,4 @@
+Flask==0.12
+flask-sqlalchemy==2.2
+simple-db-migrate
+splinter==0.7.5
