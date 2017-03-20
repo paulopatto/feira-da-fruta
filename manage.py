@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # vim: set ft=python
-from flask import Flask
 
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_script import Manager
 from flask_migrate import Migrate, MigrateCommand
@@ -24,15 +24,10 @@ manager.add_command('db', MigrateCommand)
 class FreeFairs(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 
-    # Número de identificação do estabelecimento georreferenciado by SMDU/Deinfo
     original_id = db.Column(db.Integer)
 
-    # SETCENS
-    # Setor censitário conforme IBGE
     sensus_sector = db.Column(db.String(15))
 
-    # AREAP
-    # Área de ponderação (agrupamento de setores censitários) conforme IBGE 2010
     weighted_area = db.Column(db.String(13))
 
     district_code = db.Column(db.String(9))
@@ -46,6 +41,9 @@ class FreeFairs(db.Model):
     name = db.Column(db.String(30))
     code = db.Column(db.String(8))
 
+    """
+    Dados referentes a endereço
+    """
     lon = db.Column(db.Float)
     lat = db.Column(db.Float)
     address_street = db.Column(db.String(50))
