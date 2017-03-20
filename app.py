@@ -13,22 +13,15 @@ app.config['TESTING'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///development.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
-# GET /
-@app.route("/")
-def index():
-    return ""
 
-# GET /free-fairs/
 @app.route("/api/v1/free-fairs")
 def list():
     return "{}"
 
-# GET /free-fair/:id
 @app.route('/api/v1/free-fair/<id>')
 def show(id):
     return "{ show: 'free fair' }"
 
-# POST /free-fair/
 @app.route("/api/v1/free-fair", methods=['POST'])
 def create():
     if not Request.json:
@@ -48,11 +41,9 @@ def create():
     return response
 
 
-# PATCH /free-fair/:id
 @app.route('/api/v1/free-fair/<id>', methods=['PATCH'])
 def edit(id):
     return ""
-# DELETE /free-fair/:id
 @app.route('/api/v1/free-fair/<id>', methods=['DELETE'])
 def delete(id):
     return "drop"
