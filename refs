@@ -1,0 +1,29 @@
+Ver http://flask.pocoo.org/docs/0.12/config/
+
+Configurando aplicação flask para ler diferentes environments de configuração:
+
+```python
+class Config(object):
+    DEBUG = False
+    TESTING = False
+    DATABASE_URI = 'sqlite://:memory:'
+
+class ProductionConfig(Config):
+    DATABASE_URI = 'mysql://user@localhost/foo'
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+
+class TestingConfig(Config):
+    TESTING = True
+```
+
+Para usar user `app.config.from_object('configmodule.ProductionConfig')`
+
+Ou 
+
+```python
+app = Flask(__name__)
+app.config.from_object('yourapplication.default_settings')
+app.config.from_envvar('YOURAPPLICATION_SETTINGS')
+```

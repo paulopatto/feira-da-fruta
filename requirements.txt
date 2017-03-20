@@ -1,0 +1,7 @@
+Flask==0.12
+flask-sqlalchemy==2.2
+flask-migrate==2.0.3
+Flask-RESTFul
+
+splinter==0.7.5
+ipython

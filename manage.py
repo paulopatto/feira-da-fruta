@@ -10,9 +10,12 @@ from flask_migrate import Migrate, MigrateCommand
 app = Flask(__name__)
 
 # Database config
+app.config['DEBUG'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///development.sqlite3'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
+
+# See https://github.com/kofrasa/flask-activerecord
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
@@ -21,10 +24,13 @@ manager = Manager(app)
 manager.add_command('db', MigrateCommand)
 
 
-class FreeFairs(db.Model):
+class FreeFair(db.Model):
+
+    __tablename__ = 'free_fairs'
+
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 
-    original_id = db.Column(db.Integer)
+    original_id = db.Column(db.Integer, index=True)
 
     sensus_sector = db.Column(db.String(15))
 
@@ -38,8 +44,8 @@ class FreeFairs(db.Model):
     city_region = db.Column(db.String(6))
     city_sub_region = db.Column(db.String(7))
 
-    name = db.Column(db.String(30))
-    code = db.Column(db.String(8))
+    name = db.Column(db.String(30), index=True)
+    code = db.Column(db.String(8), index=True)
 
     """
     Dados referentes a endereço
