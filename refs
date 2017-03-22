@@ -27,3 +27,6 @@ app = Flask(__name__)
 app.config.from_object('yourapplication.default_settings')
 app.config.from_envvar('YOURAPPLICATION_SETTINGS')
 ```
+
+
+https://code.tutsplus.com/tutorials/building-restful-apis-with-flask-diy--cms-26625

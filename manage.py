@@ -103,6 +103,8 @@ def create():
     params = Request.json
     free_fair = FreeFair(params)
 
+    #move to Model.save
+    #add timestamps
     db.session.add(free_fair)
     db.session.commit()
     #import code; code.interact(local=dict(globals(), **locals()))
