@@ -30,3 +30,4 @@ app.config.from_envvar('YOURAPPLICATION_SETTINGS')
 
 
 https://code.tutsplus.com/tutorials/building-restful-apis-with-flask-diy--cms-26625
+https://github.com/mardix/active-alchemy
