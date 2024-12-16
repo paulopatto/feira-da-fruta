@@ -1,7 +1,8 @@
 ### Descrição das variáveis 
 
 > Fonte: Arquivo DEINFO_AB_FEIRASLIVRES_2014_Variаveis.csv
-|----------|------------------|----------------------|-------|
+
+
 | Variável | Nome da variável |Descrição da variável | Fonte |
 |----------|------------------|----------------------|-------|
 | ID       | Identificador    | Número de identificação do estabelecimento georreferenciado por SMDU/Deinfo | SMDU/Deinfo |
